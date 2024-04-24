@@ -6,7 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={{ color: 'white', fontSize: 34, fontWeight: 800 }}>WeatherOrNot</Text>
+      <Text style={{ color: 'white', fontSize: 34, fontWeight: "800" }}>WeatherOrNot</Text>
       <LinearGradient colors={['rgba(93, 56, 140, 0.5)', 'transparent']} style={styles.background}></LinearGradient>
     </View>
   )
