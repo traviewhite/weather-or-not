@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "weather-or-not",
+    "scheme": "weather-or-not",
     "slug": "weather-or-not",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -25,6 +26,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
