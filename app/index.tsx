@@ -1,17 +1,38 @@
+import { Redirect, router } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
-import { Text, View, SafeAreaView } from 'react-native'
+import { Text, View, Button, ScrollView, YStack, YGroup } from 'tamagui'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+
 import { LinearGradient } from 'expo-linear-gradient'
 
 const App = () => {
+  const insets = useSafeAreaInsets()
+
   return (
-    <View className="flex-1 justify-center items-center bg-purple-400 dark:bg-purple-900">
-      <Text className="text-2xl font-semibold text-neutral-700 dark:text-neutral-200">Welcome to</Text>
-      <Text className="p-2 text-5xl font-extrabold text-neutral-800 dark:text-neutral-300">WeatherOrNot</Text>
+    <>
+      <ScrollView contentContainerStyle={{ height: '100%' }}>
+        <StatusBar style='auto' />
 
-      <StatusBar style="auto" />
+        <YStack fullscreen inset={insets} justifyContent='center' paddingHorizontal='$6'>
+          <YStack alignItems='center'>
+            <Text theme='alt1' fontSize='$8' fontWeight='300'>
+              Welcome to
+            </Text>
+            <Text paddingTop='$2' paddingBottom='$4' fontSize='$10' fontWeight='900'>
+              WeatherOrNot
+            </Text>
+            <Text theme='alt1' fontSize='$4' textAlign='center' lineHeight={'$2'}>
+              Not just a weather app, but a weather lifestyle. Let WeatherOrNot decide the best outfit options based on
+              your personal preferences.
+            </Text>
+          </YStack>
 
-      <LinearGradient className='h-full top-0 right-0 left-0 absolute' colors={['rgba(93, 56, 140, 0.5)', 'transparent']}></LinearGradient>
-    </View>
+          <Button theme='purple_active' size={'$5'} marginTop='$10' onPress={() => router.push('/new-user-sign-in')}>
+            Begin
+          </Button>
+        </YStack>
+      </ScrollView>
+    </>
   )
 }
 
